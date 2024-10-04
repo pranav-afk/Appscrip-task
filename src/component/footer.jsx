@@ -36,10 +36,10 @@ const Footer = () => {
 
       <div class="col-md-3">
         <h4>Subscribe to our Newsletter</h4>
-        <form>
-          <input style={{padding:'10px'}} type="email" placeholder="Enter your email"/>
-          <button type="submit" className="subBtn">Subscribe</button>
-        </form>
+        <div class="subscribe-container">
+  <input type="email" placeholder="Enter your email" />
+  <button type="submit" class="subBtn">Subscribe</button>
+</div>
       </div>
 
     </div>
