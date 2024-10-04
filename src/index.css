@@ -1,5 +1,6 @@
 .app-container {
   max-width: 1200px;
+  min-width: 550px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -50,23 +51,32 @@ main {
 }
 
 footer {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: #333;
   color: white;
   padding: 20px;
   text-align: center;
+  overflow-wrap: break-word;
 }
 
+footer .container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: space-between; /* Distribute space between items */
+}
 
 footer .row {
+  width: 100%; /* Ensure row takes full width */
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 footer .col-md-3 {
-  flex-basis: 25%;
+  flex: 1 1 25%; /* Allow columns to take up to 25% of the row */
   padding: 20px;
+  min-width: 200px; /* Set a minimum width for columns */
 }
+
 footer h4 {
   font-size: 18px;
   font-weight: bold;
@@ -103,6 +113,7 @@ footer .copyright {
 footer .copyright p {
   margin: 0;
 }
+
 
 .filter-menu {
   position: fixed; /* Fixed position to overlay */
@@ -159,38 +170,9 @@ label select {
 }
 
 .subBtn{
+  overflow-wrap: break-word;
   margin-left: 20px;
   padding: 10px;
   color: gray;
   background-color: black;
 }
-.subscribe-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px; /* Space between input and button */
-  width: 100%;
-  max-width: 100%;
-  padding: 0 15px; /* Add some padding to avoid edge collision */
-  box-sizing: border-box;
-}
-
-.subscribe-container input[type="email"] {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  width: 100%; /* Ensure the input takes full width */
-  max-width: 300px; /* Optional max-width */
-  box-sizing: border-box;
-}
-
-.subscribe-container button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-  flex-shrink: 0;
-}
-
