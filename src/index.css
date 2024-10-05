@@ -61,20 +61,20 @@ footer {
 
 footer .container {
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap */
-  justify-content: space-between; /* Distribute space between items */
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 footer .row {
-  width: 100%; /* Ensure row takes full width */
+  width: 100%;
   display: flex;
-  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
-footer .col-md-3 {
-  flex: 1 1 25%; /* Allow columns to take up to 25% of the row */
+footer .grid {
+  flex: 1 1 25%;
   padding: 20px;
-  min-width: 200px; /* Set a minimum width for columns */
+  min-width: 200px;
 }
 
 footer h4 {
@@ -114,62 +114,62 @@ footer .copyright p {
   margin: 0;
 }
 
-
 .filter-menu {
-  position: fixed; /* Fixed position to overlay */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 250px; /* Width of the filter menu */
-  height: 100%; /* Full height */
-  background-color: white; /* Background color */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-  padding: 20px; /* Padding inside the menu */
-  z-index: 1000; /* Ensure it's above other content */
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  box-shadow: 5px 0 5px gray;
+  padding: 20px;
+  z-index: 1000;
 }
 
-
 .filter-menu label {
-  display: block; /* Block display for each label */
-  margin-bottom: 10px; /* Space between labels */
+  display: block;
+  margin-bottom: 10px;
 }
 
 .filters-sort-container {
-  display: flex; /* Flex display to align filters and sort */
-  justify-content: space-between; /* Space between elements */
-  margin-bottom: 20px; /* Space below the filters */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-#sort{
+#sort {
   font-size: 15px;
   border: none;
 }
-.button{
+
+.button {
   border: none;
   background-color: white;
   font-size: 15px;
   border-bottom: 2px solid #333;
 }
 
-.button:hover{
+.button:hover {
   color: grey;
 }
+
 label {
-  display: block; /* Make each label take up full width */
-  margin-bottom: 10px; /* Space between labels */
+  display: block;
+  margin-bottom: 10px;
 }
 
 label select {
-  width: 150px; /* Set the desired width for all dropdowns */
+  width: 150px;
   padding: 5px;
 }
 
 .sort select {
-  width: 200px; /* Set a width for the dropdown */
-  padding: 10px; /* Add padding inside the dropdown */
-  background-color: white; /* Background color */
+  width: 200px;
+  padding: 10px;
+  background-color: white;
 }
 
-.subBtn{
+.subBtn {
   overflow-wrap: break-word;
   margin-left: 20px;
   padding: 10px;

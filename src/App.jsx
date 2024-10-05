@@ -4,20 +4,26 @@ import Footer from './component/footer.jsx';
 
 
 export const App=()=> {
+  const [displayedProducts, setDisplayedProducts] = useState([]);
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showFilters, setShowFilters] = useState(false); // State to control filter visibility
+  const [sortproducts, setsortedProducts] = useState([]);
+  const [setIsLoading] = useState(true);
+  const [setError] = useState(null);
+  const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch('https://fakestoreapi.com/products');
+        const response2= await fetch('https://fakestoreapi.com/products?sort=desc')
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }
         const data = await response.json();
+        const data2= await response2.json();
         setProducts(data);
+        setDisplayedProducts(data);
+        setsortedProducts(data2)
       } catch (err) {
         setError(err.message);
       } finally {
@@ -28,17 +34,20 @@ export const App=()=> {
     fetchProducts();
   }, []);
 
-  const toggleFilters = () => {
-    setShowFilters(!showFilters); // Toggle filter visibility
+  const handleSort = (e) => {
+    const value = e.target.value;
+
+    if (value === "Price: High to Low") {
+      setDisplayedProducts(sortproducts);
+    } 
+    else{
+      setDisplayedProducts(products);
+    }
   };
 
-  if (isLoading) {
-    return <div>Loading products...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+  const toggleFilters = () => {
+    setShowFilters(!showFilters); 
+  };
 
   return (
     <React.Fragment>
@@ -61,17 +70,15 @@ export const App=()=> {
             </div>
 
             <div className="sort">
-              <select id="sort">
-                <option>Recommended</option>
+              <select onChange={handleSort} id="sort">
+                <option value="Recommended">Recommended</option>
                 <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
+                <option value="Price: High to Low">Price: High to Low</option>
                 <option>Newest Arrivals</option>
                 <option>Customer Rating</option>
               </select>
             </div>
           </div>
-
-          {/* Side menu for filters */}
           {showFilters && (
             <div className="filter-menu">
               <h3>Filters</h3>
@@ -113,13 +120,12 @@ export const App=()=> {
                   </select>
                 </label>
               </div>
-              {/* Add more filter options as needed */}
               <button onClick={toggleFilters}>Close Filter</button>
             </div>
           )}
 
           <div className="product-grid">
-            {products.map(product => (
+            {displayedProducts.map(product => (
               <div key={product.id} className="product-item">
                 <img src={product.image} alt={product.title} />
                 <h2>{product.title}</h2>
@@ -129,6 +135,7 @@ export const App=()=> {
               </div>
             ))}
           </div>
+          
         </section>
       </main>
       <Footer />
