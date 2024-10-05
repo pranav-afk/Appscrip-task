@@ -38,4 +38,4 @@ This React app demonstrates product fetching, sorting, and filtering functionali
 
 ## Deployment
 
-Deployed via Netlify [https://silly-gaufre-f8c7d4.netlify.app/](#) 
+Deployed via Netlify [https://capable-kitten-da543b.netlify.app/](#) 
