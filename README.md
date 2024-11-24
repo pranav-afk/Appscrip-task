@@ -18,7 +18,7 @@ This React app demonstrates product fetching, sorting, and filtering functionali
 
 1. Clone the repository:
    
-   git clone https://github.com/pranav-afk/Appscrip-task-Pranav-Dhaygude.git
+   git clone https://github.com/pranav-afk/Appscrip-task.git
    
 2. Install dependencies using **Bun**:
 
